@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Components/StaticMeshComponent.h"
 #include "HealthComponent.h"
+#include "Components/StaticMeshComponent.h"
 #include "ToonTanks/GameModes/TankGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -34,6 +34,7 @@ void UHealthComponent::TakeDamage(AActor* DamagedActor, float Damage, const UDam
 	}
 
 	Health = FMath::Clamp(Health - Damage, 0.0f, DefaultHealth);
+	// UE_LOG(LogTemp, Warning, TEXT("Health: %f"), Health);
 
 	if (Health <= 0)
 	{
